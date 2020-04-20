@@ -1,0 +1,12 @@
+---
+title: "Range"
+author: "Raniere Silva"
+date: "20 April 2020"
+output: html_document
+---
+
+# Range
+
+Range is
+the difference between maximum and minimum intensity values
+in a neighborhood.

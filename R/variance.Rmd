@@ -1,0 +1,21 @@
+---
+title: "Variance"
+author: "Raniere Silva"
+date: "20 April 2020"
+output: html_document
+---
+
+# Variance
+
+Variancec is
+the sum of the squares of the differences
+between the intensity of the central pixel and its neighbours.
+
+```{python fig.cap="Example"}
+import os
+import skimage
+
+filename = os.path.join("img/be340ee72689dfe3f8dc9c24de6127f4.png")
+image = skimage.io.imread(filename)
+skimage.io.imshow(image)
+```
