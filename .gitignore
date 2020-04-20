@@ -128,3 +128,15 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .Rproj.user
+
+# Others
+## master...origin/master [ahead 5]
+R/*_files/
+R/*.md
+R/*tex
+R/*.html
+comment.cut
+masters_dissertation.bcf
+masters_dissertation.fls
+masters_dissertation.pdf
+masters_dissertation.run.xml
