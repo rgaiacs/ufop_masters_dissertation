@@ -18,6 +18,19 @@
 %% Incluia os pacotes no preamble.tex por questão de conveniência
 \input{preamble}
 
+\title{My master}
+\author{Raniere Gaia Costa da Silva}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{%
+\hypersetup{%
+  pdftitle = {My master},
+  pdfsubject = {Raniere Gaia Costa da Silva},
+  pdfkeywords = {Image},
+  pdfauthor = {\textcopyright\ Raniere Gaia Costa da Silva}
+}}{}
+\makeatother
+
 %% Começa aqui o documento
 \begin{document}
 
