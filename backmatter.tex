@@ -1,0 +1,21 @@
+%% Estritamente opcional
+%\begin{colophon}
+%  Esta tese foi feita em \LaTeXe{} usando a classe ``hepthesis'' ~\cite{hepthesis}.
+%\end{colophon}
+
+% Aqui será definido o estilo de bibliografia utilizado
+% Pacote para Padrão de Harvard
+\bibliographystyle{abbrv}
+
+%% No arquivo citacoes.bib ficam todas as nossas citações
+% Apenas as citações que utilizamos em nosso texto aparecerão no fim do texto
+% Para que as citações sejam compiladas, você precisa compilar o seu texto normalmente para que se saiba quais citações foram usadas. Depois, deve rodar o bibtex no seu texto para que um arquivo com as citações no formato abnt seja gerado. Depois, é necessário rodar o latex no arquivo principal novamente.
+
+\bibliography{mythesis}
+
+%% Várias pessoas preferem colocar estas tabelas aqui em vez de deixar a front matter enorme. 
+%\listoffigures
+%\listoftables
+
+%% Aqui você pode incluir um índice remissivo. O índice remissivo organiza os termos importantes do seu texto por ordem alfabética. Para que um termo apareça no índice remissivo, ele precisa estar marcado com o comando \index no seu texto. Isso pode ser feito após a declaração das seções. O MakeIndex deve ser rodado no seu main.tex para gerar este indice.
+%\printindex

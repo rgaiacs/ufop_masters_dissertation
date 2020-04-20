@@ -1,0 +1,49 @@
+% Modelo baseado no hepthesis para monografias, dissertações e teses
+% Alan Robert Resende de Freitas
+
+%% Para compilar rascunhos normais (figuras não mostradas para compilação mais rápida)
+%\documentclass[hyperpdf,nobind,draft,oneside]{hepthesis}
+%\documentclass[hyperpdf,nobind,draft,twoside]{hepthesis}
+
+%% Para compilar rascunhos rápidos (quebra as citações por necessidade)
+%\documentclass[hyperpdf,nobind,draft,hidefrontback]{hepthesis}
+
+%% Pacotes que precisam ser incluídos antes do documentclass
+
+%% Para versões de "Cambridge" de capa leve
+\documentclass[hyperpdf,bindnopdf]{hepthesis}
+%% Para versões de "Cambridge" de capa dura (devem ser de um lado da página apenas)
+%\documentclass[hyperpdf,oneside]{hepthesis}
+
+%% Incluia os pacotes no preamble.tex por questão de conveniência
+\input{preamble}
+
+%% Começa aqui o documento
+\begin{document}
+
+%% Começa aqui o front matter não numerado (páginas de frentes, rubricas e índice)
+\begin{frontmatter}
+  \input{frontmatter}
+\end{frontmatter}
+
+%% Aqui começa o conteúdo mesmo da dissertação
+\begin{mainmatter}
+
+  \input{introduction}
+  
+\end{mainmatter}
+
+%% Aqui você criar novos capítulos e colocar nos apêndices no seu texto
+% No apêndice colocamos dados que comprovam nossa pesquisa mas que não são fundamentais para o entendimento do texto
+\begin{appendices}
+  \input{appendices}
+\end{appendices}
+
+%% Aqui inserimos a contra capa do nosso texto
+% A contra capa contém a bibliografia no formato ABNT e um Índice Remissivo
+\begin{backmatter}
+  \input{backmatter}
+\end{backmatter}
+
+%% Fecha o documento
+\end{document}
