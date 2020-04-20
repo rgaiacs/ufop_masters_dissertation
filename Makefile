@@ -1,8 +1,12 @@
-.PHONY: clean
+.PHONY: clean R
 
-masters_dissertation.pdf: masters_dissertation.tex
-	make -C R all
+ALL_TEX = $(wildcard *.tex)
+
+masters_dissertation.pdf: masters_dissertation.tex $(ALL_TEX) R
 	latexmk -pdf $<
+
+R:
+	make -C R all
 
 clean:
 	latexmk -c

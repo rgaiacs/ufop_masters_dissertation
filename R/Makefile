@@ -5,6 +5,6 @@ ALL_TEX = $(subst .Rmd,.tex,$(ALL_RMD))
 	Rscript -e "library(rmarkdown); rmarkdown::render('$<', rmarkdown::md_document(variant = 'markdown', ext = '.md'))"
 
 %.tex: %.md
-	pandoc --from markdown-auto_identifiers --to latex+tex_math_dollars+implicit_figures-auto_identifiers --output $@ $<
+	pandoc --no-highlight --from markdown-auto_identifiers --to latex+tex_math_dollars+implicit_figures-auto_identifiers --output $@ $<
 
 all: $(ALL_TEX)
