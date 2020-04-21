@@ -7,10 +7,10 @@ output: html_document
 
 # Small Example
 
-Consider that we have a set $S$ define as $$S = \{(0, 0), (1, 1)\}$$.
+Consider that we have a set $S$ define as $S = \{(0, 0), (1, 1)\}$.
 We can visualise $S$ in $\mathbb{R}^2$:
 
-```{python fig.cap="Visualise of points"}
+```{python echo=FALSE, fig.height=3, fig.width=3, fig.cap="Visualise of points"}
 import matplotlib.pyplot as plt
 
 points = [[0, 0], [1, 1]]
@@ -36,7 +36,7 @@ The classification
 is supported by the vector
 $(1, 1)$.
 
-```{python fig.cap="Visualise of points and classifier"}
+```{python echo=FALSE, fig.height=3, fig.width=3, fig.cap="Visualise of points and classifier"}
 import matplotlib.pyplot as plt
 
 points = [[0, 0]]
@@ -77,7 +77,7 @@ plt.plot(
 ```
 
 
-```{python fig.cap="Example"}
+```{python echo=FALSE, fig.height=3, fig.width=3, fig.cap="Example"}
 from sklearn import svm
 X = [[0, 0], [1, 1]]
 y = [0, 1]

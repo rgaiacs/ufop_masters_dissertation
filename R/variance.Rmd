@@ -11,7 +11,7 @@ Variancec is
 the sum of the squares of the differences
 between the intensity of the central pixel and its neighbours.
 
-```{python fig.cap="Example"}
+```{python echo=FALSE, fig.height=3, fig.cap="Variance example"}
 import os
 import skimage
 

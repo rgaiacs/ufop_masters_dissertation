@@ -1,0 +1,22 @@
+---
+title: "Average Intensity"
+author: "Raniere Silva"
+date: "20 April 2020"
+output: html_document
+---
+
+# Average Intensity
+
+```{python fig.height=3, fig.cap="Average Intensity"}
+import os
+from skimage.color.adapt_rgb import adapt_rgb, each_channel
+import skimage
+
+@adapt_rgb(each_channel)
+def average_intensity(image):
+    return skimage.filters.median(image)
+
+filename = os.path.join("img/be340ee72689dfe3f8dc9c24de6127f4.png")
+image = skimage.io.imread(filename)
+skimage.io.imshow(average_intensity(image))
+```
