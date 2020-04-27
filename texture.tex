@@ -15,11 +15,81 @@ Maximum Intensity Value;
 
 Minimum Intensity Value;
 
+\section{Local Binary Pattern}
+
+The Local Binary Pattern (LBP)
+is a derivation of the Texture Unit
+defined by \cite{wang_texture_1990}.
+From the spatial domain,
+we can define the LBP feature vector $l$
+for each pixel $a$
+by comparing the pixel to each of its 8 neighbors.
+If the center pixel's value is greater than the neighbor's value,
+we assign $0$ to that position in the vector.
+Otherwise,
+we write $1$.
+For example,
+consider that we have
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+  $a_{i - 1, j + 1} = 194$ & $a_{i, j + 1} = 144$ & $a_{i + 1, j + 1} = 132$ \\
+  \hline
+  $a_{i - 1, j} = 180$ & $a_{i, j} = 136$ & $a_{i + 1, j} = 136$ \\
+  \hline
+  $a_{i - 1, j - 1} = 167$ & $a_{i, j - 1} = 125$ & $a_{i + 1, j - 1} = 129$ \\
+  \hline
+\end{tabular}
+\end{center}
+
+The feature vector will be
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+  $l_{i - 1, j + 1} = 1$ & $l_{i, j + 1} = 1$ & $l_{i + 1, j + 1} = 0$ \\
+  \hline
+  $l_{i - 1, j} = 1$ & & $l_{i + 1, j} = 0$ \\
+  \hline
+  $l_{i - 1, j - 1} = 1$ & $l_{i, j - 1} = 0$ & $l_{i + 1, j - 1} = 0$ \\
+  \hline
+\end{tabular}
+\end{center}
+
+We represented as a matrix
+that has $l_{i, j}$ empty.
+We can store the matrix as a linear vector
+by following the 8 neighbours in one direction.
+For example,
+if we start with $l_{i, j + 1}$
+and go clockwise,
+we will have
+
+\begin{center}
+\begin{tabular}{|c|}
+  \hline $l_{i, j + 1} = 1$ \\
+  \hline $l_{i + 1, j + 1} = 0$ \\
+  \hline $l_{i + 1, j} = 0$ \\
+  \hline $l_{i + 1, j - 1} = 0$ \\
+  \hline $l_{i, j - 1} = 0$ \\
+  \hline $l_{i - 1, j - 1} = 1$ \\
+  \hline $l_{i - 1, j} = 1$ \\
+  \hline $l_{i - 1, j + 1} = 1$ \\
+  \hline
+\end{tabular}
+\end{center}
+
+In total,
+we have $2^8 = 256$ possible values for the LBP vector $l$.
+The histogram of LBP in an image
+should revel its texture information.
+
 \input{R/local-binary-pattern.tex}
 
-Histogram of Oriented Gradients (HOG);
+\section{Histogram of Oriented Gradients (HOG)}
 
-Gray-Level Co-Occurrence Matrix (GLCM);
+\section{Gray-Level Co-Occurrence Matrix (GLCM);}
 
 7 Hu Moments;
 

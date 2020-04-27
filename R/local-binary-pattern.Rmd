@@ -6,26 +6,44 @@ output: html_document
 bibliography: ../masters_dissertation.bib
 ---
 
-# Local Binary Pattern
+## Example
 
-Local @wang_texture_1990
+Consider the following image:
 
-
-```{python fig.height=3, fig.cap="Local Binary Pattern"}
+```{python echo=FALSE, fig.height=3, fig.cap="Image for Local Binary Pattern"}
 import os
-from skimage.color.adapt_rgb import adapt_rgb, each_channel
-import skimage
-from skimage.feature import local_binary_pattern
 
-@adapt_rgb(each_channel)
-def lbp(image):
-    return local_binary_pattern(
-        image,
-        1,
-        1
-    )
+from skimage.color import rgb2gray
+from skimage.feature import local_binary_pattern
+import skimage
+
+import matplotlib.pyplot as plt
 
 filename = os.path.join("img/be340ee72689dfe3f8dc9c24de6127f4.png")
 image = skimage.io.imread(filename)
-skimage.io.imshow(lbp(image))
+gray_image = rgb2gray(image)
+
+skimage.io.imshow(gray_image)
+```
+
+Using
+scikit-image's `local_binary_pattern`,
+we have the following histogram
+where each bin corresponde
+to one of the 256 possible values
+of the LBP vector.
+
+```{python fig.height=3, fig.cap="Local Binary Pattern Histogram"}
+lbp_image = local_binary_pattern(
+    gray_image[0:100, 0:100],
+    8,  # n_points
+    1  # radius
+)
+
+bins_values, bins_edges, patches = plt.hist(
+    lbp_image.ravel(),
+    bins=256,
+    range=(0, 256)
+)
+plt.show()
 ```
